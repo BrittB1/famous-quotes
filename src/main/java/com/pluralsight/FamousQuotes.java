@@ -1,13 +1,16 @@
 package com.pluralsight;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class FamousQuotes {
     public static void main(String[] args) {
 
 
         Scanner keyboard = new Scanner(System.in);
+        Random randomChoice = new Random();
 
+        //TODO: Add remaining 4 quotes
         String[] famousQuotes = {"\"I can accept failure, everyone fails at something. But I can't accept not trying.\" — Michael Jordan ",
                 "\"Do not let making a living prevent you from making a life.\" — John Wooden",
                 "“Always forgive your enemies; nothing annoys them so much.”\n" +
@@ -21,23 +24,36 @@ public class FamousQuotes {
 
         do {
             try {
+                System.out.println("Select a number 1 - 10 to select a quote OR 0 for a random quote: ");
+                int userChoice = keyboard.nextInt();
 
+                int index;
 
-                System.out.println("Select a number 1 - 10 to generate a quote: ");
+                if (userChoice == 0) {
+                    index = randomChoice.nextInt(10);
+                } else {
+                    index = userChoice - 1;
 
-                int index = keyboard.nextInt();
-
-
+                }
                 System.out.println(famousQuotes[index]);
             } catch (Exception e) {
 
                 System.out.println("Sorry, that's out of range. Please choose a number 1 - 10");
+                keyboard.nextLine();
             }
             keyboard.nextLine();
-            System.out.print("Would you like another quote? (Y/N)");
-            String choice = keyboard.nextLine();
+            System.out.print("Would you like another quote? (Y/N): ");
+            String choice = keyboard.nextLine().toUpperCase();
 
-        } while (continueProgram == true);
 
+            if (choice.equals("Y")) { //.equals() compares the content of strings
+                continueProgram = true;
+
+            } else {
+                System.out.println("Thank you for using the quote generator. Goodbye! \uD83D\uDC4B ");
+                continueProgram = false;
+            }
+
+        } while (continueProgram);
     }
 }
