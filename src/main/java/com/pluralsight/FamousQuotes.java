@@ -10,7 +10,6 @@ public class FamousQuotes {
         Scanner keyboard = new Scanner(System.in);
         Random randomChoice = new Random();
 
-        //TODO: Add remaining 4 quotes
         String[] famousQuotes = {"\"I can accept failure, everyone fails at something. But I can't accept not trying.\" — Michael Jordan ",
                 "\"Do not let making a living prevent you from making a life.\" — John Wooden",
                 "“Always forgive your enemies; nothing annoys them so much.”\n" +
@@ -18,7 +17,14 @@ public class FamousQuotes {
                 "“Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.”\n" +
                         "― Bill Keane", "“I have not failed. I've just found 10,000 ways that won't work.”\n" +
                 "― Thomas A. Edison", "“A day without sunshine is like, you know, night.”\n" +
-                "― Steve Martin"};
+                "― Steve Martin",
+                "“I love deadlines. I love the whooshing noise they make as they go by.”\n" +
+                "― Douglas Adams, The Salmon of Doubt: Hitchhiking the Galaxy One Last Time",
+                "“Do what you can, with what you have, where you are.”\n" +
+                "― Theodore Roosevelt","“A children's story that can only be enjoyed by children is not a good children's story in the slightest.”\n" +
+                "― C.S. Lewis"
+                ,"“Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred.”\n" +
+                "― Martin Luther King Jr."};
 
         boolean continueProgram = true;
 
